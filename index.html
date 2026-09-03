@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>فهرست — چک‌لیست شخصی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1>فهرست</h1>
+    <span class="date-stamp" id="dateStamp"></span>
+  </div>
+  <div class="subhead">
+    <span class="progress-text" id="progressText">۰ از ۰ انجام شد</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</header>
+
+<main>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <div class="empty-glyph">[ ]</div>
+    <p>هنوز هیچ دسته‌ای نساختی. با دکمهٔ پایین یه دستهٔ جدید بساز — مثلاً «خرید»، «کارهای امروز» یا هرچی که لازم داری.</p>
+  </div>
+
+  <div id="categoriesRoot"></div>
+
+  <div class="add-category-row">
+    <button class="add-category-btn" id="addCategoryBtn">
+      <span class="plus-sign">＋</span>
+      <span>دستهٔ جدید</span>
+    </button>
+  </div>
+</main>
+
+<div class="toolbar">
+  <button class="toolbar-btn" id="exportBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    <span>دانلود PDF</span>
+  </button>
+  <button class="toolbar-btn reset-btn" id="resetBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+    <span>ریست همه</span>
+  </button>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-sheet">
+    <h3 id="modalTitle">اطمینان داری؟</h3>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="modalCancel">انصراف</button>
+      <button class="modal-btn confirm" id="modalConfirm">تأیید</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
